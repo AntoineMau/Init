@@ -1,0 +1,3 @@
+ifconfig | grep broad | awk '{print $6}'
+
+ping -c1 10.12.255.255 && arp -a | grep "10.12" | awk '{print $2}'| sed 's/(//g' | sed 's/)//g'%
