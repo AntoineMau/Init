@@ -1,1 +1,1 @@
-netstat -nr | awk '/default/{print $2}' | head -1
+nslookup slash16.org | awk '/Server/{print $2}'
