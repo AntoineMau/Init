@@ -1,0 +1,1 @@
+echo "nouveau nom" > /etc/hostname

@@ -1,0 +1,8 @@
+#cron est un service qui lance des taches a horaires regulieres a partir du moment ou l'on lance cron:
+#/etc/init.d/cron start|stop|restart
+#et pour planifier des tache a horaires regulieres on les places dans :
+#/etc/cron.d
+#/etc/cron.hourly
+#/etc/cron.daily
+#/etc/cron.weekly
+#/etc/cron.monthly
