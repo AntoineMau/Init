@@ -1,13 +1,12 @@
 #!/bin/bash
-PATH_OLD=`pwd`
-read -p "Entre le chemin ou tu veux git push: " PATH
-cd $PATH
+cd ..
 git status
 read -p "Entre les fichiers que tu veux add: " FILES
 git add $FILES
+echo "$FILES"
 read -p "Entre le message que tu veux commit: " MSG
 git commit -m "$MSG"
 git push
 echo "push termine:\n"
 git status
-cd $PATH_OLD
+cd 3.Scripting
