@@ -1,4 +1,2 @@
 #!/bin/bash
-sudo passwd -l identifiant
-sudo killall -KILL -u identifiant
-sudo userdel -r identifiant
+sudo deluser --force

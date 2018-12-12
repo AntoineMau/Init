@@ -1,1 +1,1 @@
-cat /etc/passwd | grep -Ei "zsh|bash" | awk -F: '{print $1}'
+cat /etc/passwd | grep bash | awk -F: '{print $1}'

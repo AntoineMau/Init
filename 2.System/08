@@ -1,2 +1,3 @@
 id_rsa.pub
 #et il se trouve dans /home/anmauffr/.ssh/
+#pour creer une cle: ssh-keygen

@@ -1,2 +1,2 @@
-#'intra.42.fr 46.19.122.85' >> /etc/hosts
+#'46.19.122.85 intra.42.fr' >> /etc/hosts
 #mais pas les permissions pour le faire

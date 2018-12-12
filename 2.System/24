@@ -1,1 +1,1 @@
-dpkg --list
+dpkg-query -f '${binary:Package}\n' -W

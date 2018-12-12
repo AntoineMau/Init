@@ -1,3 +1,2 @@
-#hebergeur: cloudfront.net
-#sur le site : https://www.tophebergeur.com/outilswebmaster/whois/
-#entrer l'url du site et il vous rend l'hebergeur
+#whois slash16.org | grep Server
+#serveur AWS = Amazon Web Service
