@@ -1,3 +1,4 @@
+#sudo service --status-all
  [ - ]  anacron
  [ + ]  avahi-daemon
  [ - ]  bluetooth
@@ -25,3 +26,5 @@
  [ + ]  udev
  [ + ]  unattended-upgrades
  [ - ]  x11-common
+
+#appele: deamons
