@@ -7,15 +7,15 @@ echo "==========> GIT STATUS <=========="
 echo ""
 git status
 echo ""
-read -p "Entre les fichiers que tu veux add: " FILES
-echo ""
 echo "==========> GIT ADD <=========="
+echo ""
+read -p "Entre les fichiers que tu veux add: " FILES
 echo ""
 git add $FILES
 echo ""
-read -p "Entre le message que tu veux commit: " MSG
-echo ""
 echo "==========> GIT COMMIT <=========="
+echo ""
+read -p "Entre le message que tu veux commit: " MSG
 echo ""
 git commit -m "$MSG"
 echo ""
