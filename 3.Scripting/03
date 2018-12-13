@@ -32,13 +32,13 @@ do
 		fi
 		git status
 		cd $OLDPWD
-		echo -ne "\033[34m\n*Press ENTER to continu*\033[0m "
+		echo -ne "\033[34m\n\n*Press ENTER to continue*\033[0m "
 		read TMP
 	else
 		clear
 		NB_F=$((($RANDOM%1000)+1))
 		NB_COUNT=1
-		echo -e "\nUn nombre vient d'etre genere aleatoirement entre 1 et 1000, a toi de la trouver\n"
+		echo -e "\nUn nombre vient d'etre genere aleatoirement entre 1 et 1000, a toi de le trouver\n"
 		read -p "Quelle est ta proposition ? " NB_J
 		while [[ NB_J -ne NB_F ]]
 		do
@@ -52,7 +52,7 @@ do
 			NB_COUNT=$(($NB_COUNT+1))
 			read -p "Quelle est ta proposition ? " NB_J
 		done
-		echo -ne "\033[32m\nBien joué ! Tu la trouve en $NB_COUNT coup.\n\n\033[34m*Press ENTER to continu*\033[0m "
+		echo -ne "\033[32m\nBien joué ! Tu l'as trouve en $NB_COUNT coup.\n\n\033[34m*Press ENTER to continue*\033[0m "
 		read TMP
 	fi
 	clear
@@ -64,8 +64,7 @@ do
 	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 done
 clear
-
-echo -ne "Bye Bye\033[34m\n\n*Press ENTER to continu*\033[0m "
+echo -ne "Bye Bye\033[34m\n\n*Press ENTER to continue*\033[0m "
 read TMP
 clear
 exit 0
