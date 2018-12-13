@@ -1,14 +1,11 @@
 #!/bin/bash
-/c/Users/antoi/github/5_1.init
 clear
 read -p "Entre le chemin ou tu veux git push: " CHEMIN
 cd $CHEMIN
-pwd
 echo -e "\n===============> GIT STATUS <===============\n"
 GIT_TEST=`git status`
-echo $GIT_TEST
-echo "On branch master Your branch is up to date with 'origin/master'. nothing to commit, working tree clean "
-if [ GIT_TEST != "On branch master Your branch is up to date with 'origin/master'. nothing to commit, working tree clean " ]
+
+if [ $GIT_TEST != "On branch master Your branch is up to date with 'origin/master'. nothing to commit, working tree clean" ]
 then
     git status
     echo -e "\n===============> GIT ADD <===============\n"
@@ -22,5 +19,6 @@ then
     git push
     echo -e "\n===============> GIT STATUS <===============\n"
 fi
+
 git status
 cd $OLDPWD
