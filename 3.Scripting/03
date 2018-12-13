@@ -3,20 +3,20 @@ clear
 echo -e "actuel emplacement: $PWD\n"
 read -p "Entre le chemin ou l'on trouve t'on .git: " CHEMIN
 cd $CHEMIN
-echo -e "\n===============> GIT STATUS <===============\n"
+echo -e "\n\033[33m===============> GIT STATUS <===============\033[37m\n"
 if [[ -n `git status | grep add` ]]
 then
     git status
-    echo -e "\n===============> GIT ADD <===============\n"
+    echo -e "\033[33m\n===============> GIT ADD <===============\033[37m\n"
     read -p "Entre les fichiers que tu veux add: " FILES
     git add $FILES
-    echo -e "\n===============> GIT COMMIT <===============\n"
+    echo -e "\n\033[33===============> GIT COMMIT <===============\033[37m\n"
     read -p "Entre le message que tu veux commit: " MSG
     echo ""
     git commit -m "$MSG"
-    echo -e "\n===============> GIT PUSH <===============\n"
+    echo -e "\n\033[33===============> GIT PUSH <===============\033[37m\n"
     git push
-    echo -e "\n===============> GIT STATUS <===============\n"
+    echo -e "\n\033[33===============> GIT STATUS <===============\033[37m\n"
 fi
 
 git status
