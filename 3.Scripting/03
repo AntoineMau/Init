@@ -21,3 +21,4 @@ then
 fi
 git status
 cd $OLDPWD
+exit 0
