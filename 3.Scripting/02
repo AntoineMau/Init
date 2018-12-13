@@ -1,3 +1,8 @@
 #!/bin/bash
 
-sudo deluser --force
+if [[ $? -ne 1 ]]
+then
+	echo "usage: ./02 <USER_NAME>"
+	exit 0
+fi
+sudo deluser --force $1
