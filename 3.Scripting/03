@@ -11,13 +11,12 @@ then
     read -p "Entre les fichiers que tu veux add: " FILES
     git add $FILES
     echo -e "\n\033[33===============> GIT COMMIT <===============\033[37m\n"
-    read -p "Entre le message que tu veux commit: " MSG
+    read -p "Entre le message avec lequel tu veux commit: " MSG
     echo ""
     git commit -m "$MSG"
     echo -e "\n\033[33===============> GIT PUSH <===============\033[37m\n"
     git push
     echo -e "\n\033[33===============> GIT STATUS <===============\033[37m\n"
 fi
-
 git status
 cd $OLDPWD
