@@ -4,7 +4,12 @@ read -p "Entre le chemin ou tu veux git push: " CHEMIN
 cd $CHEMIN
 echo -e "\n===============> GIT STATUS <===============\n"
 TEST=`git status | grep add`
-if [ -n TEST ]
+echo ""
+echo ""
+echo $TEST
+echo ""
+echo ""
+if [[ -n $TEST ]]
 then
     git status
     echo -e "\n===============> GIT ADD <===============\n"
