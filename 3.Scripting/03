@@ -1,29 +1,23 @@
 #!/bin/bash
 
-PATH_OLD=`pwd`
-cd ..
 clear
-echo "
-==========> GIT STATUS <==========
-"
+PATH_OLD=`pwd`
+#echo $PATH_OLD
+#read -p "Entre le chemin ou tu veux git push: " PATH
+#echo $PATH
+#cd PATH
+cd ..
+echo -e "\n==========> GIT STATUS <==========\n"
 git status
-echo "
-==========> GIT ADD <==========
-"
+echo -e "\n==========> GIT ADD <==========\n"
 read -p "Entre les fichiers que tu veux add: " FILES
 git add $FILES
-echo "
-==========> GIT COMMIT <==========
-"
+echo -e "\n==========> GIT COMMIT <==========\n"
 read -p "Entre le message que tu veux commit: " MSG
 echo ""
 git commit -m "$MSG"
-echo "
-==========> GIT PUSH <==========
-"
+echo -e "\n==========> GIT PUSH <==========\n"
 git push
-echo "
-==========> GIT STATUS <==========
-"
+echo -e "\n==========> GIT STATUS <==========\n"
 git status
 cd $PATH_OLD
