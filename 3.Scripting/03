@@ -7,17 +7,17 @@ PATH_OLD=`pwd`
 #echo $PATH
 #cd PATH
 cd ..
-echo -e "\n==========> GIT STATUS <==========\n"
+echo -e "\n===============> GIT STATUS <===============\n"
 git status
-echo -e "\n==========> GIT ADD <==========\n"
+echo -e "\n===============> GIT ADD <===============\n"
 read -p "Entre les fichiers que tu veux add: " FILES
 git add $FILES
-echo -e "\n==========> GIT COMMIT <==========\n"
+echo -e "\n===============> GIT COMMIT <===============\n"
 read -p "Entre le message que tu veux commit: " MSG
 echo ""
 git commit -m "$MSG"
-echo -e "\n==========> GIT PUSH <==========\n"
+echo -e "\n===============> GIT PUSH <===============\n"
 git push
-echo -e "\n==========> GIT STATUS <==========\n"
+echo -e "\n===============> GIT STATUS <===============\n"
 git status
 cd $PATH_OLD
