@@ -64,7 +64,7 @@ do
 	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 done
 clear
-echo -ne "\033[35mAsta la vista\033[34m\n\n*Press ENTER to continue*\033[0m "
+echo -ne "\033[35mBye Bye\033[34m\n\n*Press ENTER to continue*\033[0m "
 read TMP
 clear
 exit 0
