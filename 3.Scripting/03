@@ -12,9 +12,6 @@ do
 	if [[ $CHOIX -eq 1 ]]
 	then
 		clear
-		echo -ne "actuel emplacement: $PWD\n\n"
-		read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
-		cd $PATH_GIT
 		echo -ne "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
 		if [[ -n `git status | grep add` ]]
 		then
@@ -31,7 +28,6 @@ do
 			echo -ne "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
 		fi
 		git status
-		cd $OLDPWD
 		echo -ne "\033[34m\n\n*Press ENTER to continue*\033[0m "
 		read TMP
 	else
@@ -52,7 +48,7 @@ do
 			NB_COUNT=$(($NB_COUNT+1))
 			read -p "Quelle est ta proposition ? " NB_J
 		done
-		echo -ne "\033[32m\nBien joué ! Tu l'as trouve en $NB_COUNT coup.\n\n\033[34m*Press ENTER to continue*\033[0m "
+		echo -ne "\033[32m\nBien joué ! Tu l'as trouve en $NB_COUNT coups.\n\n\033[34m*Press ENTER to continue*\033[0m "
 		read TMP
 	fi
 	clear
