@@ -5,18 +5,23 @@ read -p "Entre le chemin ou tu veux git push: " CHEMIN
 cd $CHEMIN
 pwd
 echo -e "\n===============> GIT STATUS <===============\n"
-#GIT_TEST=`git status`
-#if [ GIT_TEST !=  ]
-git status
-echo -e "\n===============> GIT ADD <===============\n"
-read -p "Entre les fichiers que tu veux add: " FILES
-git add $FILES
-echo -e "\n===============> GIT COMMIT <===============\n"
-read -p "Entre le message que tu veux commit: " MSG
-echo ""
-git commit -m "$MSG"
-echo -e "\n===============> GIT PUSH <===============\n"
-git push
-echo -e "\n===============> GIT STATUS <===============\n"
+GIT_TEST=`git status`
+if [ GIT_TEST != "On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean" ]
+then
+    git status
+    echo -e "\n===============> GIT ADD <===============\n"
+    read -p "Entre les fichiers que tu veux add: " FILES
+    git add $FILES
+    echo -e "\n===============> GIT COMMIT <===============\n"
+    read -p "Entre le message que tu veux commit: " MSG
+    echo ""
+    git commit -m "$MSG"
+    echo -e "\n===============> GIT PUSH <===============\n"
+    git push
+    echo -e "\n===============> GIT STATUS <===============\n"
+fi
 git status
 cd $OLDPWD
