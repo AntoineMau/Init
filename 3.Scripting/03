@@ -1,13 +1,12 @@
 #!/bin/bash
-
+/c/Users/antoi/github/5_1.init
 clear
-PATH_OLD=`pwd`
-#echo $PATH_OLD
-#read -p "Entre le chemin ou tu veux git push: " PATH
-#echo $PATH
-#cd PATH
-cd ..
+read -p "Entre le chemin ou tu veux git push: " CHEMIN
+cd $CHEMIN
+pwd
 echo -e "\n===============> GIT STATUS <===============\n"
+#GIT_TEST=`git status`
+#if [ GIT_TEST !=  ]
 git status
 echo -e "\n===============> GIT ADD <===============\n"
 read -p "Entre les fichiers que tu veux add: " FILES
@@ -20,4 +19,4 @@ echo -e "\n===============> GIT PUSH <===============\n"
 git push
 echo -e "\n===============> GIT STATUS <===============\n"
 git status
-cd $PATH_OLD
+cd $OLDPWD
