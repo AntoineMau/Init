@@ -3,28 +3,28 @@
 PATH_OLD=`pwd`
 cd ..
 clear
-echo ""
-echo "==========> GIT STATUS <=========="
-echo ""
+echo "
+==========> GIT STATUS <==========
+"
 git status
-echo ""
-echo "==========> GIT ADD <=========="
-echo ""
+echo "
+==========> GIT ADD <==========
+"
 read -p "Entre les fichiers que tu veux add: " FILES
 echo ""
 git add $FILES
-echo ""
-echo "==========> GIT COMMIT <=========="
-echo ""
+echo "
+==========> GIT COMMIT <==========
+"
 read -p "Entre le message que tu veux commit: " MSG
 echo ""
 git commit -m "$MSG"
-echo ""
-echo "==========> GIT PUSH <=========="
-echo ""
+echo "
+==========> GIT PUSH <==========
+"
 git push
-echo ""
-echo "==========> GIT STATUS <=========="
-echo ""
+echo "
+==========> GIT STATUS <==========
+"
 git status
 cd $PATH_OLD
