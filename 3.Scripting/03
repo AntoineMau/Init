@@ -31,7 +31,7 @@ do
 		fi
 		git status
 		cd $OLDPWD
-		echo -ne "\033[34m*Press ENTER to continu*\033[0m "
+		echo -ne "\033[34m\n*Press ENTER to continu*\033[0m "
 		read TMP
 	else
 		NB_F=$((($RANDOM%1000)+1))
@@ -50,7 +50,7 @@ do
 			NB_COUNT=$(($NB_COUNT+1))
 			read -p "Quelle est ta proposition ? " NB_J
 		done
-		echo -ne "\033[32m\nBien joué ! Tu la trouve en $NB_COUNT coup. \033[34m*Press ENTER to continu*\033[0m "
+		echo -ne "\033[32m\nBien joué ! Tu la trouve en $NB_COUNT coup.\n\n\033[34m*Press ENTER to continu*\033[0m "
 		read TMP
 	fi
 	clear
