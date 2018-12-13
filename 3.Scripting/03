@@ -1,24 +1,44 @@
 #!/bin/bash
 
 clear
-echo -e "actuel emplacement: $PWD\n"
-read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
-cd $PATH_GIT
-echo -e "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
-if [[ -n `git status | grep add` ]]
-then
-	git status
-	echo -e "\033[33m\n===============>  GIT ADD  <===============\n\033[0m"
-	read -p "Entre les fichiers que tu veux add: " FILES
-	git add $FILES
-	echo -e "\033[33m\n===============>  GIT COMMIT  <===============\n\033[0m"
-	read -p "Entre le message avec lequel tu veux commit: " MSG
-	echo ""
-	git commit -m "$MSG"
-	echo -e "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
-	git push
-	echo -e "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
-fi
-git status
-cd $OLDPWD
+echo -ne "\033[33m-----------------------------------------------------------------\n"
+echo -ne "|								|\n"
+echo -ne "|				1. PUSH				|\n"
+echo -ne "|								|\n"
+echo -ne "|				2. JOUER			|\n"
+echo -ne "|								|\n"
+echo -ne "|				3. QUIT				|\n"
+echo -ne "|								|\n"
+echo -ne "-----------------------------------------------------------------\n\n\033[0m"
+read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
+while [[ $CHOIX -ne 3 ]]
+do
+	if [[ $CHOIX -eq 1 ]]
+	then
+		echo -e "actuel emplacement: $PWD\n"
+		read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
+		cd $PATH_GIT
+		echo -e "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
+		if [[ -n `git status | grep add` ]]
+		then
+			git status
+			echo -e "\033[33m\n===============>  GIT ADD  <===============\n\033[0m"
+			read -p "Entre les fichiers que tu veux add: " FILES
+			git add $FILES
+			echo -e "\033[33m\n===============>  GIT COMMIT  <===============\n\033[0m"
+			read -p "Entre le message avec lequel tu veux commit: " MSG
+			echo ""
+			git commit -m "$MSG"
+			echo -e "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
+			git push
+			echo -e "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
+		fi
+		git status
+		cd $OLDPWD
+	else
+		NB_TO_FIND=($RONDOM % 100)
+		echo $NB_TO_FIND
+	fi
+	read -p "Quel est ton choix, le 1, 2 ou 3 ? " CHOIX
+done
 exit 0
