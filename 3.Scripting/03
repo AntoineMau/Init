@@ -1,22 +1,23 @@
 #!/bin/bash
+
 clear
 echo -e "actuel emplacement: $PWD\n"
 read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
 cd $PATH_GIT
-echo -e "\n\033[33m===============> GIT STATUS <===============\n\033[37m"
+echo -e "\n\033[33m===============> GIT STATUS <===============\n\033[0m"
 if [[ -n `git status | grep add` ]]
 then
-    git status
-    echo -e "\033[33m\n===============> GIT ADD <===============\n\033[37m"
-    read -p "Entre les fichiers que tu veux add: " FILES
-    git add $FILES
-    echo -e "\033[33m\n===============> GIT COMMIT <===============\n\033[37m"
-    read -p "Entre le message avec lequel tu veux commit: " MSG
-    echo ""
-    git commit -m "$MSG"
-    echo -e "\033[33m\n===============> GIT PUSH <===============\n\033[37m"
-    git push
-    echo -e "\033[33m\n===============> GIT STATUS <===============\n\033[37m"
+	git status
+	echo -e "\033[33m\n===============> GIT ADD <===============\n\033[0m"
+	read -p "Entre les fichiers que tu veux add: " FILES
+	git add $FILES
+	echo -e "\033[33m\n===============> GIT COMMIT <===============\n\033[0m"
+	read -p "Entre le message avec lequel tu veux commit: " MSG
+	echo ""
+	git commit -m "$MSG"
+	echo -e "\033[33m\n===============> GIT PUSH <===============\n\033[0m"
+	git push
+	echo -e "\033[33m\n===============> GIT STATUS <===============\n\033[0m"
 fi
 git status
 cd $OLDPWD
