@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
-read -p "Entre le chemin ou tu veux git push: " CHEMIN
+echo -e "actuel emplacement: $PWD\n"
+read -p "Entre le chemin ou l'on trouve t'on .git: " CHEMIN
 cd $CHEMIN
 echo -e "\n===============> GIT STATUS <===============\n"
-#TEST=`git status | grep add`
 if [[ -n `git status | grep add` ]]
 then
     git status
