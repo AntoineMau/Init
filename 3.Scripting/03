@@ -36,9 +36,18 @@ do
 		git status
 		cd $OLDPWD
 	else
-		NB_TO_FIND=($RONDOM % 100)
-		echo $NB_TO_FIND
+		NB_FIND=$((($RANDOM%1000)+1))
+		echo $NB_FIND
 	fi
-	read -p "Quel est ton choix, le 1, 2 ou 3 ? " CHOIX
+	echo -ne "\033[33m-----------------------------------------------------------------\n"
+	echo -ne "|								|\n"
+	echo -ne "|				1. PUSH				|\n"
+	echo -ne "|								|\n"
+	echo -ne "|				2. JOUER			|\n"
+	echo -ne "|								|\n"
+	echo -ne "|				3. QUIT				|\n"
+	echo -ne "|								|\n"
+	echo -ne "-----------------------------------------------------------------\n\n\033[0m"
+	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 done
 exit 0
