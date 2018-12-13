@@ -11,45 +11,49 @@ while [[ $CHOIX -ne 3 ]]
 do
 	if [[ $CHOIX -eq 1 ]]
 	then
-		echo -e "actuel emplacement: $PWD\n"
+		echo -ne "actuel emplacement: $PWD\n"
 		read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
 		cd $PATH_GIT
-		echo -e "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
+		echo -ne "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
 		if [[ -n `git status | grep add` ]]
 		then
 			git status
-			echo -e "\033[33m\n===============>  GIT ADD  <===============\n\033[0m"
+			echo -ne "\033[33m\n===============>  GIT ADD  <===============\n\033[0m"
 			read -p "Entre les fichiers que tu veux add: " FILES
 			git add $FILES
-			echo -e "\033[33m\n===============>  GIT COMMIT  <===============\n\033[0m"
+			echo -ne "\033[33m\n===============>  GIT COMMIT  <===============\n\033[0m"
 			read -p "Entre le message avec lequel tu veux commit: " MSG
 			echo ""
 			git commit -m "$MSG"
-			echo -e "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
+			echo -ne "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
 			git push
-			echo -e "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
+			echo -ne "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
 		fi
 		git status
 		cd $OLDPWD
+		echo -ne "\033[34m*Press ENTER to continu*\033[0m "
+		read TMP
 	else
 		NB_F=$((($RANDOM%1000)+1))
 		NB_COUNT=1
-		echo "Un nombre vient d'etre genere aleatoirement entre 1 et 1000, a toi de la trouver"
+		echo -e "\nUn nombre vient d'etre genere aleatoirement entre 1 et 1000, a toi de la trouver\n"
 		read -p "Quelle est ta proposition ? " NB_J
 		while [[ NB_J -ne NB_F ]]
 		do
 			if [[ NB_J -gt NB_F ]]
 			then
-				echo "Tu as vise trop haut. "
+				echo -e "\nTu as vise trop haut.\n"
 			elif [[ NB_J -lt NB_F ]]
 			then
-				echo "Tu as vise trop bas. "
+				echo -e "\nTu as vise trop bas.\n"
 			fi
 			NB_COUNT=$(($NB_COUNT+1))
 			read -p "Quelle est ta proposition ? " NB_J
 		done
-		read -p "Bien joué ! Le nombre etait $NB_F. *Press ENTER to continu* " TMP
+		echo -ne "\033[32m\nBien joué ! Tu la trouve en $NB_COUNT coup. \033[34m*Press ENTER to continu*\033[0m "
+		read TMP
 	fi
+	clear
 	echo -ne "\033[33m-------------------------\n"
 	echo -ne "|	1. PUSH		|\n"
 	echo -ne "|	2. JOUER	|\n"
@@ -57,4 +61,5 @@ do
 	echo -ne "-------------------------\n\n\033[0m"
 	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 done
+clear
 exit 0
