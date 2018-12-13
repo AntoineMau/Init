@@ -11,7 +11,8 @@ while [[ $CHOIX -ne 3 ]]
 do
 	if [[ $CHOIX -eq 1 ]]
 	then
-		echo -ne "actuel emplacement: $PWD\n"
+		clear
+		echo -ne "actuel emplacement: $PWD\n\n"
 		read -p "Entre le chemin ou l'on trouve t'on .git: " PATH_GIT
 		cd $PATH_GIT
 		echo -ne "\n\033[33m===============>  GIT STATUS  <===============\n\033[0m"
