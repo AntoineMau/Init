@@ -1,11 +1,11 @@
 #!/bin/bash
 
 clear
-echo -ne "\033[33m-------------------------\n"
-	echo -ne "|	1. PUSH		|\n"
-	echo -ne "|	2. JOUER	|\n"
-	echo -ne "|	3. QUIT		|\n"
-	echo -ne "-------------------------\n\n\033[0m"
+echo -ne "\033[33m-----------------------------------------\n"
+	echo -ne "|		1. PUSH NORMAL		|\n"
+	echo -ne "|		2. JOUER		|\n"
+	echo -ne "|		3. QUIT			|\n"
+	echo -ne "-----------------------------------------\n\n\033[0m"
 read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 while [[ $CHOIX -ne 3 ]]
 do
@@ -18,11 +18,13 @@ do
 			git status
 			echo -ne "\033[33m\n===============>  GIT ADD  <===============\n\033[0m"
 			read -p "Entre les fichiers que tu veux add: " FILES
+			echo "git add $FILES"
 			git add $FILES
 			echo -ne "\033[33m\n===============>  GIT COMMIT  <===============\n\033[0m"
 			read -p "Entre le message avec lequel tu veux commit: " MSG
 			echo ""
 			git commit -m "$MSG"
+			echo "git commit $MSG"
 			echo -ne "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
 			git push
 			echo -ne "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
