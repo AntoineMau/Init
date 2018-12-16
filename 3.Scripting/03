@@ -27,20 +27,24 @@ do
 			read -p "Quel flags veux tu ajouter a : gcc " FLAG
 			alias GF="$FLAG"
 		fi
-		if [[ -n `alias -p | grep EXE` ]]
+		if [[ -n `alias -p | grep executer` ]]
 		then
 			read -p "Veux tu changer de nom d'executable ? actuel: $EXE [y/n] " YESNO
 			if [[ $YESNO == 'y' ]]
 			then
 				read -p "Quel nom d'executable veux tu ? " EXE
-				alias GF="$EXE"
+				alias executer="$EXE"
 			fi
 		else
 				read -p "Quel nom d'executable veux tu ? " EXE
-				alias GF="$EXE"
+				alias executer="$EXE"
 		fi
-		make re
+		gcc $FLAG -c *.c
+		gcc $FLAG -o $EXE *.o
 		./$EXE
+		alias -p
+		echo -ne "\033[34m\n\n*Press ENTER to continue*\033[0m "
+		read TMP
 	elif [[ $CHOIX -eq 2 ]]
 	then
 		clear
@@ -84,7 +88,8 @@ do
 		git status
 		echo -ne "\033[34m\n\n*Press ENTER to continue*\033[0m "
 		read TMP
-	else
+	elif [[ $CHOIX -eq 4 ]]
+	then
 		clear
 		NB_F=$((($RANDOM%1000)+1))
 		NB_COUNT=1
@@ -113,7 +118,19 @@ do
 	echo -ne "|		4. JOUER		|\n"
 	echo -ne "|		5. QUIT			|\n"
 	echo -ne "-----------------------------------------\n\n\033[0m"
-	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
+	read -p "Quel est ton choix: le 1, 2, 3, 4 ou 5 ? " CHOIX
+	while [[ $CHOIX -ne 1 && $CHOIX -ne 2 && $CHOIX -ne 3 && $CHOIX -ne 4 && $CHOIX -ne 5 ]]
+	do
+		clear
+		echo -ne "\033[33m-----------------------------------------\n"
+		echo -ne "|		1. COMPILING		|\n"
+		echo -ne "|		2. PUSH NORMAL		|\n"
+		echo -ne "|		3. PUSH FORCE		|\n"
+		echo -ne "|		4. JOUER		|\n"
+		echo -ne "|		5. QUIT			|\n"
+		echo -ne "-----------------------------------------\n\n\033[0m"
+		read -p "Quel est ton choix: le 1, 2, 3, 4 ou 5 ? " CHOIX
+	done
 done
 clear
 echo -ne "\033[35mBye Bye\033[34m\n\n*Press ENTER to continue*\033[0m "
