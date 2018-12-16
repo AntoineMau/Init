@@ -106,11 +106,13 @@ do
 		read TMP
 	fi
 	clear
-	echo -ne "\033[33m-------------------------\n"
-	echo -ne "|	1. PUSH		|\n"
-	echo -ne "|	2. JOUER	|\n"
-	echo -ne "|	3. QUIT		|\n"
-	echo -ne "-------------------------\n\n\033[0m"
+	echo -ne "\033[33m-----------------------------------------\n"
+	echo -ne "|		1. COMPILING		|\n"
+	echo -ne "|		2. PUSH NORMAL		|\n"
+	echo -ne "|		3. PUSH FORCE		|\n"
+	echo -ne "|		4. JOUER		|\n"
+	echo -ne "|		5. QUIT			|\n"
+	echo -ne "-----------------------------------------\n\n\033[0m"
 	read -p "Quel est ton choix: le 1, 2 ou 3 ? " CHOIX
 done
 clear
