@@ -24,7 +24,6 @@ do
 			read -p "Entre le message avec lequel tu veux commit: " MSG
 			echo ""
 			git commit -m "$MSG"
-			echo "git commit $MSG"
 			echo -ne "\033[33m\n===============>  GIT PUSH  <===============\n\033[0m"
 			git push
 			echo -ne "\033[33m\n===============>  GIT STATUS  <===============\n\033[0m"
