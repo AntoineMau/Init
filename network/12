@@ -1,0 +1,3 @@
+ipconfig getpacket en0 | grep yi | awk '{print $3}'
+
+#regarder yiaddr
